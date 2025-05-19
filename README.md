@@ -17,7 +17,14 @@ Designed for remote exploration, sensor testing, and system resilience.
 
 ---
 ### 📡 Terrax Robotics Concepts
-![TRX-01](poster1.png)
+| Modular Rover | Robotic Arm |
+|---------------|-------------|
+| ![](https://raw.githubusercontent.com/Trexard/terrax-robotics.github.io/main/posters/poster1.png) | ![](https://raw.githubusercontent.com/Trexard/terrax-robotics.github.io/main/posters/poster2.png) |
+
+| Raven Emblem | TRX-01 Prototype |
+|--------------|------------------|
+| ![](https://raw.githubusercontent.com/Trexard/terrax-robotics.github.io/main/posters/poster3.png) | ![](https://raw.githubusercontent.com/Trexard/terrax-robotics.github.io/main/posters/poster4.png) |
+
 
 
 
