@@ -19,11 +19,11 @@ Designed for remote exploration, sensor testing, and system resilience.
 ### 📡 Terrax Robotics Concepts
 | Modular Rover | Robotic Arm |
 |---------------|-------------|
-| ![](poster1.png) | ![](poster2.png) |
+| ![](posters/poster1.png) | ![](posters/poster2.png) |
 
 | Raven Emblem | TRX-01 Prototype |
 |--------------|------------------|
-| ![](poster3.png) | ![](poster4.png) |
+| ![](posters/poster3.png) | ![](posters/poster4.png) |
 
 
 
