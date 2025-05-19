@@ -18,7 +18,7 @@ Designed for remote exploration, sensor testing, and system resilience.
 ---
 ### 📡 Terrax Robotics Concepts
 
-![TRX-01](posters/poster4.png)
+![TRX-01](posters/poster4.png/)
 
 
 **🌐 Website:** [terrax-robotics.com](https://terrax-robotics.com)  
