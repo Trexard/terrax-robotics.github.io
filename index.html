@@ -1,93 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Terrax Robotics — modular robotics lab, engineering creativity, and hands-on mechatronics.">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terrax Robotics</title>
   <style>
     body {
-      margin: 0;
+      background-image: radial-gradient(ellipse at top left, rgba(90,60,160,0.1) 0%, rgba(0,30,60,0.3) 60%),
+                        radial-gradient(ellipse at bottom right, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.6) 100%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: radial-gradient(circle at center, rgba(90,60,160,0.08) 0%, rgba(0,30,60,0.3) 80%);
+      background-repeat: no-repeat;
+      background-size: cover;
       font-family: Arial, sans-serif;
       background-color: #0f0f0f;
-      color: #f4f4f4;
-      text-align: center;
+      color: #eee;
+      padding: 2rem;
     }
-    header {
-      padding: 2em 1em;
-      background-color: #1e1e1e;
-    }
-    .logo-container {
-      display: inline-block;
-      padding: 1em;
-      border: 1px solid rgba(255, 165, 0, 0.15);
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgba(255, 165, 0, 0.07);
-      background: rgba(255, 255, 255, 0.01);
-    }
-    header img {
-      max-width: 280px;
-      display: block;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin: 0.2em 0 0.5em;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 700px;
-      margin: auto;
+    p, section, footer {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1rem;
       line-height: 1.6;
+      color: #ccc;
     }
-    .section {
-      padding: 3em 1em;
+    .lang { display: none; }
+    .active { display: block; }
+    .lang-switcher {
+      position: fixed;
+      top: 30%;
+      right: 0;
+      transform: translateY(-50%);
+      background: #111;
+      padding: 1rem;
+      z-index: 999;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      border-radius: 8px 0 0 8px;
+      box-shadow: -2px 0 6px rgba(0,0,0,0.3);
+      opacity: 0.75;
+      backdrop-filter: blur(1px);
     }
-    footer {
-      font-size: 0.9em;
-      color: #888;
-      padding: 2em 1em;
-      background-color: #1e1e1e;
+    .lang-switcher select {
+      writing-mode: horizontal-tb;
+      transform: rotate(-90deg);
+      background: #000;
+      color: #00f6ff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      font-family: 'Share Tech Mono', monospace;
+      border-radius: 6px;
+      box-shadow: 0 0 14px rgba(0,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
     }
-    a {
-      color: #ffa500;
-      text-decoration: none;
+    .lang-switcher select:hover {
+      background: #0f0f0f;
+      box-shadow: 0 0 18px rgba(0,255,255,0.6);
     }
-    a:hover {
-      text-decoration: underline;
+    nav button {
+      font-family: 'Share Tech Mono', monospace;
+      background: #1b1b1b;
+      color: #ccc;
+      border: 1px solid #333;
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background-color: #222;
+      color: #00f6ff;
+      border-color: #00f6ff;
+      box-shadow: 0 0 6px rgba(0,255,255,0.3);
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <img src="terrax-logo-mech-raven.png" alt="Terrax Robotics Logo">
+  <div class="logo" style="margin-bottom: 2rem; padding: 0.5rem; border: 1px solid #c0a66e; border-radius: 8px; width: fit-content; background: #111; box-shadow: 0 0 12px rgba(0,255,255,0.4);">
+    <img src="logo.png" alt="Terrax Robotics Logo" width="220" />
+  </div>
+  <div class="lang-switcher">
+    <select onchange="setLang(this.value)" aria-label="Select Language">
+      <option value="en">EN</option>
+      <option value="ru">RU</option>
+      <option value="de">DE</option>
+    </select>
+  </div>
+
+  <div class="lang lang-en active">
+    <nav style="margin-bottom: 1rem;">
+      <button onclick="showSection('en-about')">About</button>
+      <button onclick="showSection('en-projects')">Projects</button>
+      <button onclick="showSection('en-gallery')">Gallery</button>
+    </nav>
+    <div id="en-about" class="en-section">
+      <h1 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1.5px;">Terrax Robotics</h1>
+      <p>Modular robots. Field-ready design. Human-centered engineering.</p>
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb;">About Us</h2>
+        <p>Terrax Robotics is a small independent engineering team based in Germany, focused on developing modular robotic platforms and creative mechatronics systems. We believe in learning by building, in open knowledge, and in the spirit of exploration.</p>
+      </section>
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb;">Current Project</h2>
+        <p>We are currently developing <strong>TRX-01</strong>, a modular tracked robot prototype based on the Actobotics system. Designed for remote exploration, sensor testing, and system resilience.</p>
+      </section>
     </div>
-    <h1>Terrax Robotics</h1>
-    <p>Modular robots. Field-ready design. Human-centered engineering.</p>
-  </header>
+    <div id="en-projects" class="en-section" style="display: none;">
+  <section>
+    <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1px;">BB-001 “Crawler”</h2>
+    <p>Our first mechatronic modular bot, built from cardboard and ready to evolve.</p>
+  </section>
+</div>
 
-  <div class="section">
-    <h2>About Us</h2>
-    <p>
-      Terrax Robotics is a small independent engineering team based in Germany, focused on developing modular robotic platforms and creative mechatronics systems. We believe in learning by building, in open knowledge, and in the spirit of exploration.
-    </p>
+    <div id="en-gallery" class="en-section" style="display: none;">
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1px;">Gallery</h2>
+        <p>A space for concepts, sketches, and artwork. Where metal meets soul.</p>
+      </section>
+    </div>
+    <footer>
+      <p>&copy; 2025 Terrax Robotics. Powered by curiosity and solder.</p>
+    </footer>
   </div>
 
-  <div class="section">
-    <h2>Current Project</h2>
-    <p>
-      We are currently developing <strong>TRX-01</strong>, a modular tracked robot prototype based on the Actobotics system, designed for outdoor testing, sensor research, and remote control development.
-    </p>
+  <div class="lang lang-ru">
+    <nav style="margin-bottom: 1rem;">
+      <button onclick="showSection('ru-about')">О проекте</button>
+      <button onclick="showSection('ru-projects')">Проекты</button>
+      <button onclick="showSection('ru-log')">Логбук</button>
+      <button onclick="showSection('ru-gallery')">Галерея</button>
+    </nav>
+
+    
+    
+    <div id="ru-about" class="ru-section">
+      <h1 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1.5px;">Terrax Robotics</h1>
+      <p>Модульные роботы. Полевая пригодность. Инженерия с человеческим лицом.</p>
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb;">О нас</h2>
+        <p>Terrax Robotics — это небольшая независимая инженерная команда из Германии, сосредоточенная на разработке модульных роботизированных платформ и креативных мехатронных систем. Мы верим в обучение через практику, открытые знания и дух исследования.</p>
+      </section>
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb;">Текущий проект</h2>
+        <p>Мы разрабатываем <strong>TRX-01</strong> — модульного гусеничного робота-прототипа на базе системы Actobotics. Он предназначен для удалённой разведки, тестирования сенсоров и устойчивой работы в нестабильных условиях.</p>
+      </section>
+    </div>
+    <div id="ru-projects" class="ru-section" style="display: none;">
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1px;">BB-001 “Crawler”</h2>
+        <p>Наш первый мехатронный модульный бот, собранный из картона и готовый к развитию.</p>
+      </section>
+    </div>
+  
+    <div id="ru-log" class="ru-section" style="display: none;">
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1px;">Логбук</h2>
+        <p>Здесь будут записи о ходе проекта, наблюдения, заметки и моменты. Личное и инженерное.</p>
+      </section>
+    </div>
+    <div id="ru-gallery" class="ru-section" style="display: none;">
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1px;">Галерея</h2>
+        <p>Здесь будут концепты, эскизы и художественные образы. Там, где техника встречается с душой.</p>
+      </section>
+    </div>
+  
+      <p>&copy; 2025 Terrax Robotics. Все права защищены.</p>
+    </footer>
   </div>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Email us: <a href="mailto:info@terrax-robotics.com">info@terrax-robotics.com</a></p>
+  <div class="lang lang-de">
+    <nav style="margin-bottom: 1rem;">
+      <button onclick="showSection('de-about')">Über uns</button>
+      <button onclick="showSection('de-projects')">Projekte</button>
+      <button onclick="showSection('de-gallery')">Galerie</button>
+    </nav>
+    <div id="de-about" class="de-section">
+      <h1 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1.5px;">Terrax Robotics</h1>
+      <p>Modulare Roboter. Feldtaugliches Design. Technik mit Mensch im Mittelpunkt.</p>
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb;">Über uns</h2>
+        <p>Terrax Robotics ist ein kleines, unabhängiges Ingenieurteam mit Sitz in Deutschland. Wir konzentrieren uns auf die Entwicklung modularer Robotikplattformen und kreativer Mechatroniksysteme. Wir glauben an Lernen durch Bauen, an offenes Wissen und an den Entdeckergeist.</p>
+      </section>
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb;">Aktuelles Projekt</h2>
+        <p>Wir entwickeln derzeit <strong>TRX-01</strong>, einen modularen, kettengetriebenen Roboterprototyp auf Basis des Actobotics-Systems. Er wurde für die Fernaufklärung, Sensortests und Systemresilienz konzipiert.</p>
+      </section>
+    </div>
+    <div id="de-projects" class="de-section" style="display: none;">
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1px;">BB-001 “Crawler”</h2>
+        <p>Unser erster mechatronischer, modularer Bot – aus Karton gebaut und bereit zur Weiterentwicklung.</p>
+      </section>
+    </div>
+    <div id="de-gallery" class="de-section" style="display: none;">
+      <section>
+        <h2 style="font-family: 'Share Tech Mono', monospace; color: #bbb; letter-spacing: 1px;">Galerie</h2>
+        <p>Ein Raum für Konzepte, Skizzen und Kunstwerke. Wo Technik auf Seele trifft.</p>
+      </section>
+    </div>
+    <footer>
+      <p>&copy; 2025 Terrax Robotics. Alle Rechte vorbehalten.</p>
+    </footer>
   </div>
 
-  <footer>
-    &copy; 2025 Terrax Robotics. Powered by curiosity and solder.
-  </footer>
+  <script>
+    function setLang(lang) {
+      const langs = document.querySelectorAll('.lang');
+      langs.forEach(el => el.classList.remove('active'));
+      document.querySelector('.lang-' + lang).classList.add('active');
+    }
+    function showSection(id) {
+      document.querySelectorAll('.en-section, .ru-section, .de-section').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+</script>
 </body>
 </html>
