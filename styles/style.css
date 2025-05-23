@@ -1,0 +1,137 @@
+/* Terrax Robotics — Unified Style */
+
+/* Reset & Base */
+body {
+  margin: 0;
+  padding: 0rem;
+  font-family: Arial, sans-serif;
+  background: #111218;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 3rem 3rem 3rem 3rem; /* left and right padding */
+}
+
+/* Typography */
+h1, h2, h3 {
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Header */
+header {
+  background: #1a1c22;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #333;
+  width: 100%;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #a3c1ff;
+  font-weight: bold;
+}
+
+/* Language Switch */
+.lang-switch {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.lang-switch a {
+  color: #999;
+  text-decoration: none;
+  margin: 0 0.25em;
+}
+
+.lang-switch a:hover {
+  text-decoration: underline;
+}
+
+/* Logo */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  max-width: 280px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 0.5rem;
+  background-color: #111;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Main Content */
+main {
+  padding: 2rem 1rem;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.gallery-item p {
+  text-align: center;
+  margin-top: 0.5em;
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.8rem;
+  background: #1a1c22;
+  border-top: 1px solid #333;
+  color: #666;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .module {
+    flex: 1 1 100%;
+  }
+}
