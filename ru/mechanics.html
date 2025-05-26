@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Механика — Terrax Robotics</title>
   <link rel="stylesheet" href="../styles/style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+    .gallery-item p {
+      text-align: center;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+  </style>
 </head>
 <body>
   <div class="logo-wrapper">
@@ -52,6 +71,26 @@
       <p>Мы используем модульный подход: соединения на штифтах, направляющих и болтах. Это позволяет быстро менять конфигурацию и экспериментировать с формой.</p>
 
       <p>Каждый элемент механики создаётся с учётом одного принципа: простота + выразительность. Даже простейший модуль может стать мостом между идеей и жизнью.</p>
+
+      <h2>📸 Галерея механизмов</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="../images/bb001-track-assembly.png" alt="Гусеничный модуль">
+          <p>Сборка гусеничного модуля</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/bb001-mech-legs.png" alt="Конструкция ног">
+          <p>Прототип ножного модуля</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/bb001-core-sketch.png" alt="Ядро управления">
+          <p>Схема центрального блока</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/bb001-manipulator-test.png" alt="Манипулятор">
+          <p>Тест захвата манипулятора</p>
+        </div>
+      </div>
     </main>
 
     <footer>
