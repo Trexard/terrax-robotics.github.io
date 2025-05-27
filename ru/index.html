@@ -3,40 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terrax Robotics</title>
-  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <title>Главная — Terrax Robotics</title>
   <link rel="stylesheet" href="../styles/style.css">
+  <style>
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 800px;
+    }
+  </style>
 </head>
 <body>
-  
-  <header>
-    <h1>Terrax Robotics</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="bb001.html">BB-001</a></li>
-        <li><a href="mechanics.html">Механика</a></li>
-        <li><a href="logbook.html">Логбук</a></li>
-        <li><a href="gallery.html">Галерея</a></li>
-        <li><a href="about.html">О проекте</a></li>
-      </ul>
-    </nav>
-    <div class="lang-switch">
-      <a href="../ru/index.html">RU</a> |
-      <a href="../en/index.html">EN</a> |
-      <a href="../de/index.html">DE</a>
-    </div>
-  </header>
+  <div class="logo-wrapper">
+    <img src="../images/logo.png" alt="Terrax Robotics Logo" class="logo">
+  </div>
 
-  <main>
-    <section>
-      <h2>Добро пожаловать в Terrax Robotics</h2>
-      <p>Здесь создаются не просто роботы. Здесь они пробуждаются.</p>
-    </section>
-  </main>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="bb001.html">BB-001</a></li>
+          <li><a href="mechanics.html">Механика</a></li>
+          <li><a href="logbook.html">Логбук</a></li>
+          <li><a href="gallery.html">Галерея</a></li>
+          <li><a href="about.html">О проекте</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch">
+        <a href="../ru/index.html">RU</a>
+        <a href="../en/index.html">EN</a>
+        <a href="../de/index.html">DE</a>
+      </div>
+    </header>
 
-  <footer>
-    <p>&copy; 2025 Terrax Robotics. Powered by curiosity and solder.</p>
-  </footer>
+    <main>
+      <section class="hero">
+        <img src="../images/dream-bot.png" alt="Робот мечты">
+        <h1>Terrax Robotics — путь к будущему</h1>
+        <p>Наш идеал: мощный, гуманоидный мех с возможностью адаптации, модульной модернизации и реальной пользой в инженерной, исследовательской или даже гуманитарной среде. Это не просто мечта — это вектор развития всей философии Terrax Robotics.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Terrax Robotics. Powered by curiosity and solder.</p>
+    </footer>
+  </div>
 </body>
 </html>
